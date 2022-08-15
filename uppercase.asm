@@ -74,15 +74,15 @@ Read:
 ;Go through the buffer and convert lowercase to uppercase:
 Scan:
     cmp byte [ebp+ecx], 61h    ;Test input char to lowercase 'a'
-    jb Next                ;If below 'a' in ASCII chart it is not a lower case
+    jb Next                    ;If below 'a' in ASCII chart it is not a lower case
     cmp byte [ebp+ecx], 7Ah    ;Test char agains lowercase 'z'
-    ja Next                ;If above 'z' in ASCII it is an uppecarcase character
+    ja Next                    ;If above 'z' in ASCII it is an uppecarcase character
     sub byte [ebp+ecx], 20h    ;Subtract 20h from lowercase to get upercase
 
 ;NEXT FUNCTION
 Next:
-    dec ecx
-    jnz Scan
+    dec ecx                 ;Decrement the counter
+    jnz Scan                ;Jump to Scan if not zero
 ;WRITE FUNCTION
 Write:
     mov eax, 4              ;Specify write syscall
