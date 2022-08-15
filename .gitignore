@@ -1,8 +1,14 @@
-
+#executables
 eatsyscall
 lowercase
+uppercase
 sandbox
+#lst files
 *.lst
+#output files
 *.o
-
+#text files
+*.txt
+!lowercase.txt
+#
 .vscode

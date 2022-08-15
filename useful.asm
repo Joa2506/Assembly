@@ -23,7 +23,8 @@ _start:
     movsx ebx, ax ;movsx can move between 8-bit to 16-bit, 16-bit to 32-bit and 8-bit to 32-bit
                   ;sx stands for sign extension
 
-multiplication: ;Multiplies with itself
+multiply: ;Multiplies with itself
     mov eax, 42
     mul eax
-
+divide:
+    

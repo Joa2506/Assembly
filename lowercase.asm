@@ -1,3 +1,15 @@
+;Executable name : lowercase
+;
+; 11. August 2022
+; Author Joakim Foss Johansen
+;
+;-----------------------------------------------------------------------
+; Build using this commangd
+; nasm -f elf -g -F stabs lowercase.asm
+; ld -p lowercase lowercase.o
+; for running in 32 bits use ld -m elf_i386 -o eatsyscall eatsyscall.o
+;-----------------------------------------------------------------------
+
 SECTION .data
 
     kangaroo: db "KANGAROO", 0Ah ;Is 10 in decimal and new line
@@ -16,7 +28,7 @@ lowercase:
     add byte [ebx], 32 ;Putting ebx in bracket means to work on the content rather then the address. Adding 32 to an upper case ASCII will give the same letter in lowercase
     inc ebx ;Inc ebx
     dec eax ;decrement counter
-    jnz lowercase ;Jump back as long as zero
+    jnz lowercase ;Jump back as long as not zero
 
     mov ecx, kangaroo ;snippet moved to ECX
     mov edx, kangarooLen ;move 0 bytes to EDX
